@@ -27,6 +27,13 @@
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->body }}</td>
                     <td>{{ $item->date }}</td>
+                    <td>
+                        <form action="/delete" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value={{ $item->id }} />
+                            <input type="submit" value="削除" />
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

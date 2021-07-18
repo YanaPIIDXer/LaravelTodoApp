@@ -35,4 +35,10 @@ class TodoController extends Controller
         }
         return redirect("/");
     }
+
+    public function delete(Request $request)
+    {
+        TodoItem::destroy($request->id);
+        return redirect("/");
+    }
 }
