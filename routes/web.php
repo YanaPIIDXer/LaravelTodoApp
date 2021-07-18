@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "TodoController@index");
+Route::post('/add', "TodoController@add");

@@ -10,4 +10,9 @@ class TodoController extends Controller
     {
         return view("index");
     }
+
+    public function add(Request $request)
+    {
+        return redirect("/");
+    }
 }
