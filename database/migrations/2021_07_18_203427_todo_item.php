@@ -13,7 +13,7 @@ class TodoItem extends Migration
      */
     public function up()
     {
-        Schema::create("todo_item", function(Blueprint $table)
+        Schema::create("todo_items", function(Blueprint $table)
         {
             $table->id()->autoIncrement();
             $table->string("title", 64);
@@ -32,6 +32,6 @@ class TodoItem extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("todo_item");
+        Schema::dropIfExists("todo_items");
     }
 }
