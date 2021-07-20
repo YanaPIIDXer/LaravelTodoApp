@@ -17,6 +17,10 @@ function add_item() {
             date: date
         }
     }).done((data) => {
+        if (!data["result"]) {
+            alert("Error.");
+            return;
+        }
         // TODO:何かしらアニメーションを付けたい
         $('<tr id="item_' + data["id"] + '"></tr>').appendTo("#todo_list");
         const $record = $("#item_" + data["id"]);
