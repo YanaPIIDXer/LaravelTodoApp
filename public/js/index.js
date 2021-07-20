@@ -24,6 +24,11 @@ function add_item() {
         $record.append("<td>" + data["body"] + "</td>");
         $record.append("<td>" + data["date"] + "</td>");
         $record.append('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />');
+
+        // フォームをリセット
+        // 配列の0番目を指定しないと動かないらしい
+        // 参考：http://uppeal.com/geek/entry/1298
+        $("#add_form")[0].reset();
     });
 }
 
