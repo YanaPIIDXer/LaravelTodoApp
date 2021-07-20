@@ -1,6 +1,6 @@
 // 追加
 function add_item() {
-    alert("Add");
+    $('#test').css('color', '#FF00FF');
 }
 
 // 消去

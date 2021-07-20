@@ -4,11 +4,13 @@
         <meta charset="utf8" />
 
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <script src="js/bootstrap/jquery.min.js"></script>
+
         <script src="js/index.js"></script>
     </head>
 
     <body class="text-center">
-        <h1>TODO App</h1>
+        <h1 id="test">TODO App</h1>
         <hr />
         
         <form action="add" method="POST">
