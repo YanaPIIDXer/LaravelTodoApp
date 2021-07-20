@@ -1,6 +1,10 @@
+var _token = null;
+window.onload = () => {
+    _token = $("#token_form [name=_token]").val();
+}
+
 // 追加
 function add_item() {
-    const _token = $("#add_form [name=_token]").val();
     const title = $("#add_form [name=title]").val();
     const body = $("#add_form [name=body]").val();
     const date = $("#add_form [name=date]").val();
@@ -19,8 +23,6 @@ function add_item() {
 
 // 消去
 function delete_item(id) {
-    const form_id = "#delete_form_" + id;
-    const _token = $(form_id + " [name=_token]").val();
     $.ajax("delete", {
         type: "post",
         data: {
