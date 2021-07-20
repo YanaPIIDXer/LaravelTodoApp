@@ -35,7 +35,7 @@ class TodoController extends Controller
         $item->date = $request->date;
 
         $item->save();
-        return response()->json(["result" => true, "title" => $item->title, "body" => $item->body, "date" => $item->date]);
+        return response()->json(["result" => true, "id" => $item->id, "title" => $item->title, "body" => $item->body, "date" => $item->date]);
     }
 
     public function delete(Request $request)
