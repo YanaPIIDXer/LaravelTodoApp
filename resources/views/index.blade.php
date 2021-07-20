@@ -6,7 +6,7 @@
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body class="text-center">
         <h1>TODO App</h1>
         <hr />
         
@@ -19,7 +19,7 @@
         </form>
         <br />
 
-        <table border="1">
+        <table border="1" class="table">
             <thead>
                 <tr><th>タイトル</th><th>本文</th><th>日付</th></tr>
             </thead>
