@@ -33,12 +33,12 @@ class TodoController extends Controller
 
             $item->save();
         }
-        return redirect("/");
+        return response()->json(["title" => $item->title, "body" => $item->body, "date" => $item->date]);
     }
 
     public function delete(Request $request)
     {
         TodoItem::destroy($request->id);
-        return redirect("/");
+        return response()->json(["id" => $request->id]);
     }
 }
