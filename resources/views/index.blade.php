@@ -2,6 +2,8 @@
     <head>
         <title>TODO App</Title>
         <meta charset="utf8" />
+
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
     </head>
 
     <body>
