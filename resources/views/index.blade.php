@@ -26,7 +26,7 @@
 
         <table border="1" class="table">
             <thead>
-                <tr><th>タイトル</th><th>本文</th><th>日付</th></tr>
+                <tr><th>タイトル</th><th>本文</th><th>日付</th><th>削除</th></tr>
             </thead>
             <tbody id="todo_list">
                 @foreach($items as $item)
