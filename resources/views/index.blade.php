@@ -13,7 +13,7 @@
         <h1>TODO App</h1>
         <hr />
         
-        <form action="add" method="POST">
+        <form action="add" id="add_form" method="POST">
             {{ csrf_field() }}
             タイトル：<input type="text" name="title" /><br />
             本文：<input type="text" name="body" /><br />
@@ -33,10 +33,10 @@
                     <td>{{ $item->body }}</td>
                     <td>{{ $item->date }}</td>
                     <td>
-                        <form action="/delete" method="POST">
+                        <form action="/delete" id="delete_form_{{ $item->id }}" method="POST">
                             {{ csrf_field() }}
                             <input type="hidden" name="id" value={{ $item->id }} />
-                            <input type="button" onclick="delete_item();" value="削除" />
+                            <input type="button" onclick="delete_item({{$item->id}});" value="削除" />
                         </form>
                     </td>
                 </tr>
