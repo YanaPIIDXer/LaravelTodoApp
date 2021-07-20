@@ -30,6 +30,7 @@ function delete_item(id) {
             id: id
         }
     }).done((data) => {
-        console.log(data);
+        // TODO:何かしらアニメーションを付けたい
+        $("#item_" + data["id"]).remove();
     })
 }

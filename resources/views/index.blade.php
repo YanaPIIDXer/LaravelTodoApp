@@ -30,19 +30,17 @@
             </thead>
             <tbody>
                 @foreach($items as $item)
-                    <div id="item_{{ $item->id }}">
-                        <tr>
-                            <td>{{ $item->title }}</td>
-                            <td>{{ $item->body }}</td>
-                            <td>{{ $item->date }}</td>
-                            <td>
-                                <form action="/delete" id="item_{{ $item->id }}" method="POST">
-                                    <input type="hidden" name="id" value={{ $item->id }} />
-                                    <input type="button" onclick="delete_item({{ $item->id }});" value="削除" />
-                                </form>
-                            </td>
-                        </tr>
-                    </div>
+                    <tr id="item_{{ $item->id }}">
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->body }}</td>
+                        <td>{{ $item->date }}</td>
+                        <td>
+                            <form action="/delete" id="item_{{ $item->id }}" method="POST">
+                                <input type="hidden" name="id" value={{ $item->id }} />
+                                <input type="button" onclick="delete_item({{ $item->id }});" value="削除" />
+                            </form>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
