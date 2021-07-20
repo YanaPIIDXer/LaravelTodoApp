@@ -10,7 +10,7 @@
     </head>
 
     <body class="text-center">
-        <h1 id="test">TODO App</h1>
+        <h1>TODO App</h1>
         <hr />
         
         <form action="add" method="POST">
