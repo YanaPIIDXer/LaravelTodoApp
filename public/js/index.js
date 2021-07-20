@@ -21,18 +21,19 @@ function add_item() {
             alert("Error.");
             return;
         }
-        // TODO:何かしらアニメーションを付けたい
-        $('<tr id="item_' + data["id"] + '"></tr>').appendTo("#todo_list");
-        const $record = $("#item_" + data["id"]);
-        $("<td>" + data["title"] + "</td>").appendTo($record);
-        $("<td>" + data["body"] + "</td>").appendTo($record);
-        $("<td>" + data["date"] + "</td>").appendTo($record);
-        $('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />').appendTo($record);
-
         // フォームをリセット
         // 配列の0番目を指定しないと動かないらしい
         // 参考：http://uppeal.com/geek/entry/1298
         $("#add_form")[0].reset();
+
+        $('<tr id="item_' + data["id"] + '"></tr>').appendTo("#todo_list");
+        const $record = $("#item_" + data["id"]);
+        const r1 = $("<td>" + data["title"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const r2 = $("<td>" + data["body"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const r3 = $("<td>" + data["date"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const r4 = $('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />').appendTo($record).fadeTo(0, 0);
+        const anim_speed = 300;
+        r1.fadeTo(anim_speed, 1, () => r2.fadeTo(anim_speed, 1, () => r3.fadeTo(anim_speed, 1, () => r4.fadeTo(anim_speed, 1))));
     });
 }
 
