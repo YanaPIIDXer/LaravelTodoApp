@@ -41,7 +41,7 @@ function delete_item(id) {
             id: id
         }
     }).done((data) => {
-        // TODO:何かしらアニメーションを付けたい
-        $("#item_" + data["id"]).remove();
+        var $record = $("#item_" + data["id"]);
+        $record.fadeOut("slow", () => $record.remove());
     })
 }
