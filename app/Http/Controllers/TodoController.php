@@ -23,17 +23,19 @@ class TodoController extends Controller
             'date' => 'required',
         ]);
 
-        if (!$validator->fails())
+        if ($validator->fails())
         {
-            $item = new TodoItem();
-
-            $item->title = $request->title;
-            $item->body = $request->body;
-            $item->date = $request->date;
-
-            $item->save();
+            return response()->json(["result" => false]);
         }
-        return response()->json(["title" => $item->title, "body" => $item->body, "date" => $item->date]);
+        
+        $item = new TodoItem();
+
+        $item->title = $request->title;
+        $item->body = $request->body;
+        $item->date = $request->date;
+
+        $item->save();
+        return response()->json(["result" => true, "title" => $item->title, "body" => $item->body, "date" => $item->date]);
     }
 
     public function delete(Request $request)
