@@ -28,12 +28,12 @@ function add_item() {
 
         $('<tr id="item_' + data["id"] + '"></tr>').appendTo("#todo_list");
         const $record = $("#item_" + data["id"]);
-        const $r1 = $("<td>" + data["title"] + "</td>").appendTo($record).fadeTo(0, 0);
-        const $r2 = $("<td>" + data["body"] + "</td>").appendTo($record).fadeTo(0, 0);
-        const $r3 = $("<td>" + data["date"] + "</td>").appendTo($record).fadeTo(0, 0);
-        const $r4 = $('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />').appendTo($record).fadeTo(0, 0);
+        const $d1 = $("<td>" + data["title"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const $d2 = $("<td>" + data["body"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const $d3 = $("<td>" + data["date"] + "</td>").appendTo($record).fadeTo(0, 0);
+        const $d4 = $('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />').appendTo($record).fadeTo(0, 0);
         const anim_speed = 300;
-        $r1.fadeTo(anim_speed, 1, () => $r2.fadeTo(anim_speed, 1, () => $r3.fadeTo(anim_speed, 1, () => $r4.fadeTo(anim_speed, 1))));
+        $d1.fadeTo(anim_speed, 1, () => $d2.fadeTo(anim_speed, 1, () => $d3.fadeTo(anim_speed, 1, () => $d4.fadeTo(anim_speed, 1))));
     });
 }
 
