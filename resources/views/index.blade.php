@@ -16,7 +16,7 @@
             {{ csrf_field() }}
         </form>
         
-        <form action="add" id="add_form" method="POST">
+        <form id="add_form">
             タイトル：<input type="text" name="title" /><br />
             本文：<input type="text" name="body" /><br />
             日付：<input type="date" name="date" /><br />
@@ -28,17 +28,14 @@
             <thead>
                 <tr><th>タイトル</th><th>本文</th><th>日付</th></tr>
             </thead>
-            <tbody>
+            <tbody id="todo_list">
                 @foreach($items as $item)
                     <tr id="item_{{ $item->id }}">
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->body }}</td>
                         <td>{{ $item->date }}</td>
                         <td>
-                            <form action="/delete" id="item_{{ $item->id }}" method="POST">
-                                <input type="hidden" name="id" value={{ $item->id }} />
-                                <input type="button" onclick="delete_item({{ $item->id }});" value="削除" />
-                            </form>
+                            <input type="button" onclick="delete_item({{ $item->id }});" value="削除" />
                         </td>
                     </tr>
                 @endforeach

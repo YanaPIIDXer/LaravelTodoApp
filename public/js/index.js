@@ -17,7 +17,13 @@ function add_item() {
             date: date
         }
     }).done((data) => {
-        console.log(data);
+        // TODO:何かしらアニメーションを付けたい
+        $("#todo_list").append('<tr id="item_' + data["id"] + '"></tr>');
+        const $record = $("#item_" + data["id"]);
+        $record.append("<td>" + data["title"] + "</td>");
+        $record.append("<td>" + data["body"] + "</td>");
+        $record.append("<td>" + data["date"] + "</td>");
+        $record.append('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />');
     });
 }
 
