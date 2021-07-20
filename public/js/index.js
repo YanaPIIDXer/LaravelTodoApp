@@ -18,12 +18,12 @@ function add_item() {
         }
     }).done((data) => {
         // TODO:何かしらアニメーションを付けたい
-        $("#todo_list").append('<tr id="item_' + data["id"] + '"></tr>');
+        $('<tr id="item_' + data["id"] + '"></tr>').appendTo("#todo_list");
         const $record = $("#item_" + data["id"]);
-        $record.append("<td>" + data["title"] + "</td>");
-        $record.append("<td>" + data["body"] + "</td>");
-        $record.append("<td>" + data["date"] + "</td>");
-        $record.append('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />');
+        $("<td>" + data["title"] + "</td>").appendTo($record);
+        $("<td>" + data["body"] + "</td>").appendTo($record);
+        $("<td>" + data["date"] + "</td>").appendTo($record);
+        $('<input type="button" onclick=delete_item(' + data["id"] + '); value="削除" />').appendTo($record);
 
         // フォームをリセット
         // 配列の0番目を指定しないと動かないらしい
