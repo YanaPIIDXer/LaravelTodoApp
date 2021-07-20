@@ -4,6 +4,7 @@
         <meta charset="utf8" />
 
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <script src="js/index.js"></script>
     </head>
 
     <body class="text-center">
@@ -15,7 +16,7 @@
             タイトル：<input type="text" name="title" /><br />
             本文：<input type="text" name="body" /><br />
             日付：<input type="date" name="date" /><br />
-            <input type="submit" value="追加" /><br />
+            <input type="button" onclick="add_item();" value="追加" /><br />
         </form>
         <br />
 
@@ -33,7 +34,7 @@
                         <form action="/delete" method="POST">
                             {{ csrf_field() }}
                             <input type="hidden" name="id" value={{ $item->id }} />
-                            <input type="submit" value="削除" />
+                            <input type="button" onclick="delete_item();" value="削除" />
                         </form>
                     </td>
                 </tr>
